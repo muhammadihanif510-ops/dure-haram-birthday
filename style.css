@@ -1,0 +1,1239 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050505;
+    color: #00ff88;
+    font-family: "Courier New", monospace;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   STEP 2 — TERMINAL
+================================================== */
+
+#terminal-screen {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #050505;
+
+    transition: opacity 1s ease;
+}
+
+.terminal-window {
+    width: 900px;
+    max-width: 90%;
+
+    background: #0c0c0c;
+
+    border: 1px solid #222;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 50px rgba(0, 255, 136, 0.08);
+}
+
+.terminal-bar {
+    height: 45px;
+
+    background: #151515;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 15px;
+
+    gap: 8px;
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.terminal-name {
+    margin-left: 10px;
+
+    color: #888;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+.terminal-body {
+    min-height: 500px;
+
+    padding: 40px;
+
+    font-size: 17px;
+
+    line-height: 2;
+}
+
+#terminal-text div {
+    opacity: 0;
+
+    animation:
+        terminalLine 0.5s forwards;
+}
+
+#enter-btn {
+    display: none;
+
+    margin-top: 30px;
+
+    padding: 12px 30px;
+
+    background: transparent;
+
+    color: #00ff88;
+
+    border: 1px solid #00ff88;
+
+    border-radius: 5px;
+
+    font-family: "Courier New", monospace;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#enter-btn:hover {
+    background: #00ff88;
+
+    color: #050505;
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 136, 0.4);
+}
+
+
+/* ==================================================
+   STEP 3 — PROJECT
+================================================== */
+
+#project-screen {
+    display: none;
+
+    width: 100%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #080808;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.project-container {
+    width: 700px;
+    max-width: 90%;
+
+    padding: 40px;
+
+    border: 1px solid #222;
+
+    border-radius: 10px;
+
+    background: #0d0d0d;
+
+    box-shadow:
+        0 0 50px rgba(0, 255, 136, 0.05);
+}
+
+.project-title {
+    font-size: 25px;
+
+    margin-bottom: 30px;
+
+    color: #00ff88;
+}
+
+.project-files {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.file {
+    padding: 15px;
+
+    border-radius: 6px;
+
+    color: #aaa;
+
+    transition: 0.3s;
+}
+
+.file:hover {
+    background: #151515;
+
+    color: white;
+}
+
+.birthday-file {
+    color: #00ff88;
+
+    cursor: pointer;
+}
+
+.birthday-file:hover {
+    background:
+        rgba(0, 255, 136, 0.08);
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 136, 0.1);
+}
+
+.project-hint {
+    margin-top: 35px;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   STEP 4 — PROTOCOL
+================================================== */
+
+#protocol-screen {
+    display: none;
+
+    width: 100%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #050505;
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
+}
+
+.protocol-container {
+    width: 700px;
+    max-width: 90%;
+
+    padding: 45px;
+
+    background: #090909;
+
+    border: 1px solid #222;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 70px rgba(0, 255, 136, 0.07);
+}
+
+.protocol-header {
+    margin-bottom: 35px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #222;
+
+    color: #888;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+#protocol-text p {
+    margin-bottom: 18px;
+
+    color: #00ff88;
+
+    opacity: 0;
+
+    animation:
+        protocolAppear 0.8s forwards;
+}
+
+#protocol-text p:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+#protocol-text p:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+#protocol-text p:nth-child(3) {
+    animation-delay: 2.5s;
+}
+
+#protocol-text p:nth-child(4) {
+    animation-delay: 3.5s;
+}
+
+.status {
+    color: #00ff88;
+
+    margin-left: 10px;
+}
+
+.progress-area {
+    margin-top: 40px;
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 5px;
+
+    background: #1a1a1a;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+#progress {
+    width: 0%;
+
+    height: 100%;
+
+    background: #00ff88;
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 136, 0.5);
+
+    transition:
+        width 0.15s linear;
+}
+
+#percentage {
+    margin-top: 12px;
+
+    text-align: right;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+#protocol-complete {
+    margin-top: 30px;
+
+    text-align: center;
+
+    color: #00ff88;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+
+/* ==================================================
+   STEP 5 — CINEMATIC WORLD
+================================================== */
+
+#birthday-screen {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #211b2d 0%,
+            #100d18 40%,
+            #050509 100%
+        );
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition:
+        opacity 2s ease;
+
+    overflow: hidden;
+}
+
+.birthday-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 30px;
+}
+
+.cinematic-line {
+    color: #aaa;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    animation:
+        cinematicFade 2s ease forwards;
+}
+
+.cinematic-message {
+    margin-top: 25px;
+
+    color: #eee;
+
+    font-family: Georgia, serif;
+
+    font-size: 34px;
+
+    font-style: italic;
+
+    opacity: 0;
+
+    animation:
+        cinematicFade 2s ease 1.5s forwards;
+}
+
+.continue-wrapper {
+    margin-top: 50px;
+
+    opacity: 0;
+
+    animation:
+        cinematicFade 2s ease 3s forwards;
+}
+
+#reveal-btn,
+#birthday-btn,
+#message-btn,
+#surprise-btn {
+    padding: 13px 28px;
+
+    background: transparent;
+
+    color: #ddd;
+
+    border: 1px solid #777;
+
+    border-radius: 30px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        all 0.5s ease;
+}
+
+#reveal-btn:hover,
+#birthday-btn:hover,
+#message-btn:hover,
+#surprise-btn:hover {
+    background:
+        rgba(255,255,255,0.08);
+
+    border-color: #fff;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.12);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ==================================================
+   STAR FIELD
+================================================== */
+
+.stars::before,
+.stars::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            1px 1px at 20% 30%,
+            white,
+            transparent
+        ),
+        radial-gradient(
+            1px 1px at 70% 20%,
+            white,
+            transparent
+        ),
+        radial-gradient(
+            1px 1px at 40% 80%,
+            white,
+            transparent
+        ),
+        radial-gradient(
+            1px 1px at 85% 70%,
+            white,
+            transparent
+        ),
+        radial-gradient(
+            1px 1px at 10% 75%,
+            white,
+            transparent
+        );
+
+    background-size:
+        300px 300px;
+
+    opacity: 0.3;
+
+    animation:
+        starMove 20s linear infinite;
+}
+
+
+/* ==================================================
+   STEP 6 — PHOTO
+================================================== */
+
+#photo-screen {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #2b2430,
+            #0d0b11 70%
+        );
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.5s ease;
+}
+
+.photo-content {
+    width: 90%;
+
+    max-width: 600px;
+}
+
+.photo-label {
+    margin-bottom: 20px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+.photo-frame {
+    width: 100%;
+
+    max-width: 520px;
+
+    height: 430px;
+
+    margin: auto;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    border: 1px solid
+        rgba(255,255,255,0.18);
+
+    background: #080808;
+
+    box-shadow:
+        0 0 80px
+        rgba(255,255,255,0.06);
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    transform: scale(0.92);
+
+    animation:
+        photoReveal 2s ease forwards;
+}
+
+.photo-placeholder {
+    text-align: center;
+
+    color: #777;
+}
+
+.photo-icon {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+
+    color: #aaa;
+}
+
+.photo-placeholder p {
+    color: #ddd;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+}
+
+.photo-placeholder span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+#birthday-btn {
+    margin-top: 30px;
+}
+
+
+/* ==================================================
+   STEP 7 — BIRTHDAY
+================================================== */
+
+#birthday-final {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #403444 0%,
+            #1b151f 45%,
+            #08070a 100%
+        );
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.5s ease;
+
+    overflow: hidden;
+}
+
+.birthday-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.07),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    animation:
+        birthdayGlow 5s ease-in-out infinite;
+}
+
+.birthday-final-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 30px;
+
+    animation:
+        birthdayEntrance 2s ease forwards;
+}
+
+.birthday-stars {
+    color: #aaa;
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+    opacity: 0.7;
+
+    animation:
+        gentleFloat 4s ease-in-out infinite;
+}
+
+.small-greeting {
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 28px;
+}
+
+.birthday-final h1 {
+    color: #f4edf3;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(44px, 8vw, 86px);
+
+    font-weight: normal;
+
+    line-height: 1.08;
+
+    text-shadow:
+        0 0 30px
+        rgba(255,255,255,0.08);
+}
+
+.birthday-final h1 span {
+    font-style: italic;
+
+    color: #eee3eb;
+}
+
+.birthday-symbol {
+    margin: 30px 0 20px;
+
+    font-size: 52px;
+
+    animation:
+        cakeFloat 3.5s ease-in-out infinite;
+}
+
+.birthday-intro {
+    color: #aaa;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    margin-bottom: 22px;
+}
+
+.birthday-divider {
+    width: 70px;
+
+    height: 1px;
+
+    margin:
+        0 auto 30px;
+
+    background:
+        rgba(255,255,255,0.35);
+}
+
+
+/* ==================================================
+   STEP 8 — MESSAGE
+================================================== */
+
+#message-screen {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #241d28,
+            #09080c 80%
+        );
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.5s ease;
+}
+
+.message-card {
+    width: 650px;
+
+    max-width: 100%;
+
+    padding: 45px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 80px
+        rgba(0,0,0,0.4);
+}
+
+.message-top {
+    color: #888;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 30px;
+}
+
+.message-card h2 {
+    color: #eee;
+
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    font-weight: normal;
+}
+
+.message-line {
+    width: 60px;
+
+    height: 1px;
+
+    background: #777;
+
+    margin: 25px auto;
+}
+
+.message-card p {
+    color: #bbb;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 15px;
+}
+
+.message-ending {
+    margin-top: 30px;
+
+    color: #ddd;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+}
+
+#surprise-btn {
+    margin-top: 35px;
+}
+
+
+/* ==================================================
+   STEP 9 — SURPRISE
+================================================== */
+
+#surprise-screen {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #211b27,
+            #050507 80%
+        );
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition:
+        opacity 2s ease;
+}
+
+.surprise-content {
+    color: #aaa;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 2.2;
+}
+
+.moon {
+    font-size: 55px;
+
+    margin-bottom: 30px;
+
+    animation:
+        gentleFloat 4s ease-in-out infinite;
+}
+
+.final-heart {
+    margin-top: 30px;
+
+    color: #ddd;
+
+    font-size: 45px;
+
+    animation:
+        heartPulse 2.5s ease-in-out infinite;
+}
+
+
+/* ==================================================
+   ANIMATIONS
+================================================== */
+
+@keyframes terminalLine {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+@keyframes protocolAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+@keyframes cinematicFade {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+@keyframes starMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-300px);
+    }
+
+}
+
+@keyframes photoReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.92);
+
+        filter:
+            blur(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+@keyframes birthdayEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+
+        filter:
+            blur(5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+@keyframes birthdayGlow {
+
+    0%, 100% {
+        transform:
+            scale(0.9);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform:
+            scale(1.08);
+
+        opacity: 0.8;
+    }
+
+}
+
+@keyframes gentleFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
+}
+
+@keyframes cakeFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-9px);
+    }
+
+}
+
+@keyframes heartPulse {
+
+    0%, 100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.12);
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .terminal-body {
+        padding: 25px;
+
+        font-size: 14px;
+    }
+
+    .project-container,
+    .protocol-container {
+        padding: 25px;
+    }
+
+    .project-title {
+        font-size: 20px;
+    }
+
+    .protocol-container {
+        font-size: 13px;
+    }
+
+    .cinematic-message {
+        font-size: 26px;
+    }
+
+    .photo-frame {
+        height: 350px;
+    }
+
+    .birthday-final h1 {
+        font-size: 43px;
+    }
+
+    .birthday-symbol {
+        font-size: 45px;
+    }
+
+    .birthday-intro {
+        font-size: 16px;
+    }
+
+    .message-card {
+        padding: 30px 20px;
+    }
+
+    .message-card h2 {
+        font-size: 26px;
+    }
+
+    .message-card p {
+        font-size: 15px;
+    }
+
+}
+```
