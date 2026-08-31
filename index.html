@@ -127,56 +127,193 @@ button {
 }
 
 
-/* =========================
-   PROJECT
-========================= */
+```html
+<!-- =========================
+     STEP 2 — PROJECT
+========================= -->
 
-#project-screen {
-    background: #080808;
-}
+<section id="project-screen" class="screen">
 
-.project-container {
-    width: 700px;
-    max-width: 90%;
-    padding: 40px;
-    border: 1px solid #222;
-    border-radius: 10px;
-    background: #0d0d0d;
-    box-shadow: 0 0 50px rgba(0,255,136,0.05);
-}
+    <div class="ide-window">
 
-.project-title {
-    font-size: 25px;
-    margin-bottom: 30px;
-    color: #00ff88;
-}
+        <!-- TOP BAR -->
+        <div class="ide-topbar">
 
-.project-files {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+            <div class="ide-dots">
+                <span class="ide-dot red"></span>
+                <span class="ide-dot yellow"></span>
+                <span class="ide-dot green"></span>
+            </div>
 
-.file {
-    padding: 15px;
-    border-radius: 6px;
-    color: #aaa;
-}
+            <div class="ide-title">
+                Birthday_Project
+            </div>
 
-.birthday-file {
-    color: #00ff88;
-    cursor: pointer;
-}
+            <div class="ide-status">
+                ● ONLINE
+            </div>
 
-.birthday-file:hover {
-    background: rgba(0,255,136,0.08);
-}
+        </div>
 
-.project-hint {
-    margin-top: 35px;
-    color: #555;
-    font-size: 13px;
-}
+
+        <!-- IDE BODY -->
+        <div class="ide-body">
+
+            <!-- SIDEBAR -->
+            <div class="ide-sidebar">
+
+                <div class="sidebar-heading">
+                    EXPLORER
+                </div>
+
+                <div class="workspace">
+                    WORKSPACE
+                </div>
+
+                <div class="folder active-folder">
+                    📁 Birthday_Project
+                </div>
+
+                <div class="sidebar-file">
+                    📄 system
+                </div>
+
+                <div class="sidebar-file">
+                    📄 memories
+                </div>
+
+                <div class="sidebar-file">
+                    📄 message
+                </div>
+
+                <div class="sidebar-file protocol-sidebar">
+                    ⚡ birthday_protocol
+                </div>
+
+            </div>
+
+
+            <!-- MAIN EDITOR -->
+            <div class="ide-main">
+
+                <div class="editor-tabs">
+
+                    <div class="editor-tab active-tab">
+                        birthday_protocol
+                    </div>
+
+                </div>
+
+
+                <div class="editor-content">
+
+                    <div class="code-line">
+                        <span class="line-number">01</span>
+                        <span class="code-comment">// A little project made for someone special.</span>
+                    </div>
+
+                    <div class="code-line">
+                        <span class="line-number">02</span>
+                    </div>
+
+                    <div class="code-line">
+                        <span class="line-number">03</span>
+                        <span class="code-keyword">const</span>
+                        <span class="code-name">birthday</span>
+                        <span class="code-symbol">=</span>
+                        <span class="code-string">"October 09"</span><span class="code-symbol">;</span>
+                    </div>
+
+                    <div class="code-line">
+                        <span class="line-number">04</span>
+                        <span class="code-keyword">const</span>
+                        <span class="code-name">person</span>
+                        <span class="code-symbol">=</span>
+                        <span class="code-string">"Dure Haram"</span><span class="code-symbol">;</span>
+                    </div>
+
+                    <div class="code-line">
+                        <span class="line-number">05</span>
+                    </div>
+
+                    <div class="code-line">
+                        <span class="line-number">06</span>
+                        <span class="code-keyword">function</span>
+                        <span class="code-function">openBirthdayProtocol</span><span class="code-symbol">() {</span>
+                    </div>
+
+                    <div class="code-line">
+                        <span class="line-number">07</span>
+                        <span class="code-indent">message</span>
+                        <span class="code-symbol">=</span>
+                        <span class="code-string">"Something special is waiting..."</span><span class="code-symbol">;</span>
+                    </div>
+
+                    <div class="code-line">
+                        <span class="line-number">08</span>
+                        <span class="code-symbol">}</span>
+                    </div>
+
+
+                    <!-- PROTOCOL CARD -->
+                    <div class="protocol-launch-card">
+
+                        <div class="launch-icon">
+                            ⚡
+                        </div>
+
+                        <div class="launch-info">
+
+                            <div class="launch-title">
+                                birthday_protocol
+                            </div>
+
+                            <div class="launch-description">
+                                Execute the birthday experience
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="launch-button"
+                            onclick="openProtocol()">
+
+                            RUN ▶
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="editor-cursor">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM STATUS BAR -->
+        <div class="ide-statusbar">
+
+            <div>
+                ⚡ Birthday Protocol
+            </div>
+
+            <div>
+                UTF-8 &nbsp; • &nbsp; JavaScript &nbsp; • &nbsp; Ready
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+```
+
 
 
 /* =========================
